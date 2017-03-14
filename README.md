@@ -105,3 +105,8 @@ Now I have a clean console and perhaps TypeScript and react-redux will work toge
 The root of the problem is that SystemJS, when it inspects dist/react-redux.js, it finds words like 'exports' that
 trigger SystemJS to conclude that it's a file that needs transpiling. It can't unpack the logic to know whether
 that code would actually run or not, so it just assumes that transpiling is required.
+
+There may be other SystemJS configuration changes I can use to tell it to not transpile the file, but I haven't found
+the right settings. Feel free to provide other advice/solutions.
+
+Thanks.
