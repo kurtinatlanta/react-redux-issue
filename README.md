@@ -83,7 +83,7 @@ will help it build.
 
     npm install --save hoist-non-react-statics invariant lodash
 
-And then update the SystemJS config in [http://localhost:8000/step3.html](http://localhost:8000/step3.html). Still getting an error:
+And then update the SystemJS config in [http://localhost:4000/step3.html](http://localhost:4000/step3.html). Still getting an error:
 
     Uncaught (in promise) Error: (SystemJS) process is not defined
 	    ReferenceError: process is not defined
@@ -101,6 +101,6 @@ And then update the SystemJS config in [http://localhost:8000/step3.html](http:/
 	    Error loading http://localhost:4000/node_modules/react-redux/src/index.js
 
 Apparently `invariant` requires the existence of `process`, which is a global variable found in node.js, not browsers,
-so I added it to the next step [http://localhost:8000/step4.html](http://localhost:8000/step4.html).
+so I added it to the next step [http://localhost:4000/step4.html](http://localhost:4000/step4.html).
 
 Now I have a clean console and perhaps TypeScript and react-redux will work together.
