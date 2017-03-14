@@ -1,18 +1,16 @@
 #React Redux Issue
-I found an issue trying to use TypeScript with a React-Redux
-application.
+I found an issue trying to use TypeScript with a React-Redux application.
 
-It surfaces when you try to import Provider and
-connect from react-redux.
+It surfaces when you try to import Provider and connect from react-redux.
 
-When loading the code in the browser, SystemJS, the
-module loader I am using with TypeScript, is convinced
-that node_modules/react-redux/dist/react-redux.js is
-an ES6 module that needs to be transpiled in the browser.
+When loading the code in the browser, SystemJS (version 0.19.46 since 0.20.x and TypeScript
+do not get along at all due to module definition syntax mismatches between TypeScript and
+SystemJS 0.20.x), the module loader I am using with TypeScript, is convinced that
+node_modules/react-redux/dist/react-redux.js is an ES6 module that needs to be transpiled
+in the browser.
 
-By default, SystemJS will try to use traceur, but since
-I am not loading traceur as part of my app, I get this error
-in my browser console:
+By default, SystemJS will try to use traceur, but since I am not loading traceur as part of
+my app, I get this error in my browser console:
 
     Uncaught (in promise) Error: (SystemJS) XHR error (404 Not Found) loading http://localhost:4000/traceur
 	    Error: XHR error (404 Not Found) loading http://localhost:4000/traceur
@@ -104,3 +102,7 @@ Apparently `invariant` requires the existence of `process`, which is a global va
 so I added it to the next step [http://localhost:4000/step4.html](http://localhost:4000/step4.html).
 
 Now I have a clean console and perhaps TypeScript and react-redux will work together.
+
+The root of the problem is that SystemJS, when it inspects dist/react-redux.js, it finds words like 'exports' that
+trigger SystemJS to conclude that it's a file that needs transpiling. It can't unpack the logic to know whether
+that code would actually run or not, so it just assumes that transpiling is required.
