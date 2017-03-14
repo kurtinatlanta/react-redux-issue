@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Redux Issue</title>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+</head>
+<body>
+Look in your JavaScript console to see the error.
+<script>
+  System.config({
+    map: {
+      'react': 'node_modules/react/dist/react.js',
+      'react-dom': 'node_modules/react-dom/dist/react-dom.js',
+      'redux': 'node_modules/redux/dist/redux.js',
+      'react-redux': 'node_modules/react-redux/dist/react-redux.js',
+    }
+  });
+
+  System.import('react');
+  System.import('react-dom');
+  System.import('redux');
+  System.import('react-redux');
+</script>
+</body>
+</html>

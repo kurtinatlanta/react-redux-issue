@@ -1,0 +1,20 @@
+{
+  "name": "react-redux-issue",
+  "version": "1.0.0",
+  "description": "Can't load react-redux with SystemJS",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm server"
+  },
+  "author": "Kurt Hoyt",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "systemjs": "^0.19.46"
+  }
+}
