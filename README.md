@@ -5,9 +5,8 @@ It surfaces when you try to import Provider and connect from react-redux.
 
 When loading the code in the browser, SystemJS (version 0.19.46 since 0.20.x and TypeScript
 do not get along at all due to module definition syntax mismatches between TypeScript and
-SystemJS 0.20.x), the module loader I am using with TypeScript, is convinced that
-node_modules/react-redux/dist/react-redux.js is an ES6 module that needs to be transpiled
-in the browser.
+SystemJS 0.20.x) is convinced that node_modules/react-redux/dist/react-redux.js is an ES6
+module that needs to be transpiled in the browser.
 
 By default, SystemJS will try to use traceur, but since I am not loading traceur as part of
 my app, I get this error in my browser console:
