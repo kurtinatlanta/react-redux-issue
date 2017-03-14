@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Redux Issue</title>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+</head>
+<body>
+<p>Added Babel as a transpiler for SystemJS.</p>
+<p>Then changed the configuration to point to the react-redux source.</p>
+<p>Added <code>hoist-non-react-statics</code>, <code>invariant</code>, and <code>lodash</code> to the configuration.</p>
+<p>Look in your JavaScript console to see the error.</p>
+<script>
+  System.config({
+    transpiler: 'plugin-babel',
+    packages: {
+      'lodash': {
+        defaultExtension: 'js'
+      },
+      'react-redux': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      }
+    },
+    map: {
+      'hoist-non-react-statics': 'node_modules/hoist-non-react-statics/index.js',
+      'invariant': 'node_modules/invariant/invariant.js',
+      'lodash': 'node_modules/lodash',
+      'plugin-babel': 'node_modules/systemjs-plugin-babel/plugin-babel.js',
+      'systemjs-babel-build': 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
+      'react': 'node_modules/react/dist/react.js',
+      'react-dom': 'node_modules/react-dom/dist/react-dom.js',
+      'redux': 'node_modules/redux/dist/redux.js',
+      'react-redux': 'node_modules/react-redux/src',
+    }
+  });
+
+  System.import('react');
+  System.import('react-dom');
+  System.import('redux');
+  System.import('react-redux');
+</script>
+</body>
+</html>

@@ -4,17 +4,21 @@
   "description": "Can't load react-redux with SystemJS",
   "main": "server.js",
   "scripts": {
-    "start": "npm server"
+    "start": "node server"
   },
   "author": "Kurt Hoyt",
   "license": "MIT",
   "dependencies": {
     "hapi": "^16.1.0",
+    "hoist-non-react-statics": "^1.2.0",
     "inert": "^4.1.0",
+    "invariant": "^2.2.2",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
-    "systemjs": "^0.19.46"
+    "systemjs": "^0.19.46",
+    "systemjs-plugin-babel": "0.0.21"
   }
 }
